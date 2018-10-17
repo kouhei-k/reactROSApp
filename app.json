@@ -1,0 +1,13 @@
+{
+  "name": "reactRosApp",
+  "displayName": "reactRosApp",
+  "expo": {
+    "sdkVersion": "29.0.0",
+    "packagerOpts": {
+      "assetExts": [
+        "ttf",
+        "json"
+      ]
+    }
+  }
+}
