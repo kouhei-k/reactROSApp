@@ -2,12 +2,12 @@ import React from 'react';
 import { createDrawerNavigator, createStackNavigator} from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-import Call from '../views/Call';
+import TopicList from '../views/TopicList';
 import TopicDetail from '../views/Connect';
 
 const TopicDrawerItem = createStackNavigator({
     TopicDetail: {
-        screen: Call,
+        screen: TopicDetail,
         navigationOptions: ({ props, navigation }) => ({
           title: 'Connect',
           /*

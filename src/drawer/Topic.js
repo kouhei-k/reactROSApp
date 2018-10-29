@@ -3,14 +3,15 @@ import { createDrawerNavigator, createStackNavigator,DrawerActions} from 'react-
 import { Icon } from 'react-native-elements';
 
 import TopicList from '../views/TopicList';
-import TopicDetail from '../views/TopicDetail';
+import Call from '../views/Call';
 import Connect from '../views/Connect';
 
 
 
 const TopicDrawerItem = createStackNavigator({
-    TopicDetail: {
-        screen: TopicDetail,
+    Call: {
+        screen: Call,
+        
 /*         ({props, navigation}) => {
          return(
             <TopicDetail
@@ -19,8 +20,9 @@ const TopicDrawerItem = createStackNavigator({
             />
          );},
 */     
+/*
         navigationOptions: ({navigation}) => ({
-          title: 'TopicDetail',
+          title: 'Call',
           headerLeft: (
             <Icon
               name="menu"
@@ -35,6 +37,7 @@ const TopicDrawerItem = createStackNavigator({
             />
           ),
         }),
+        */
     },
     Connect:{
         screen: Connect,

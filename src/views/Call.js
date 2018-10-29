@@ -4,7 +4,7 @@ import {
   ScrollView,
   StyleSheet,
   FlatList,
-
+  Linking
 } from 'react-native';
 
 import {
@@ -15,7 +15,9 @@ import {
   Button,
 } from 'react-native-elements';
 
-export default class TopicDetail extends Component{
+import roslib from 'roslib';
+
+export default class Call extends Component{
     constructor(props) {
         super(props);
 
@@ -28,8 +30,21 @@ export default class TopicDetail extends Component{
     componentDidMount(){
         //alert(this.state.ros);
         const ros = this.props.navigation.state.params.drawerProps;
-        ros.getNodes( (nodes) => {
-            this.setState({list: nodes});
+        const skype_server = new roslib.Service({
+            ros: ros,
+            name; skype_server,
+            serviceType: skype_service
+        });
+
+        skype_server.advertie((req,res) => {
+            try{
+                let url = 'skype' + req.id + '?call&amp;video=true';
+                Linking.openURL(url);
+                res.state = 1;
+            }catch{
+                res.state = 0;
+            }
+
         });
         //alert(this.state.list);
     }
