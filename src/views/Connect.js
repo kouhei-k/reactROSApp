@@ -62,7 +62,7 @@ export default class TopicDetail extends Component{
                                 alert('Connected to rosbridge server');
                                 this.props.navigation.navigate(
                                     {
-                                        routeName: 'TopicDetail', 
+                                        routeName: 'Call', 
                                         params: {drawerProps: ros}
                                     });
                             })
