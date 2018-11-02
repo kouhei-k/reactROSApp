@@ -32,17 +32,19 @@ export default class Call extends Component{
         const ros = this.props.navigation.state.params.drawerProps;
         const skype_server = new roslib.Service({
             ros: ros,
-            name; skype_server,
-            serviceType: skype_service
+            name: 'skype_server',
+            serviceType: "tms_rc_double/skype_srv",
         });
 
-        skype_server.advertie((req,res) => {
+        skype_server.advertise((req,res) => {
             try{
-                let url = 'skype' + req.id + '?call&amp;video=true';
+                let url = 'skype:' + req.id + '?call&amp;video=true';
+                alert(url);
                 Linking.openURL(url);
-                res.state = 1;
-            }catch{
-                res.state = 0;
+                res.success = 1;
+            }catch(e){
+                alert(e);
+                res.success = 0;
             }
 
         });
